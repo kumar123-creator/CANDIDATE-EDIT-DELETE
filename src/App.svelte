@@ -133,8 +133,8 @@
 
 <main class="container mt-4">
   {#if tableVisible}
-    <div class="table-container">
-      <table class="table">
+    <div class="table-responsive">
+      <table class="table table-striped">
         <thead class="thead-light">
           <tr>
             <th>First Name</th>
@@ -154,8 +154,8 @@
               <td>{candidate.email}</td>
               <td>{candidate.mobile}</td>
               <td>
-                <button class="btn btn-primary" on:click|preventDefault={() => handleTitleClick(candidate)}>Edit</button>
-                <button class="btn btn-danger" on:click|preventDefault={() => showDeleteConfirmation = true}>Delete</button>
+                <button class="btn btn-primary btn-sm" on:click|preventDefault={() => handleTitleClick(candidate)}>Edit</button>
+                <button class="btn btn-danger btn-sm" on:click|preventDefault={() => showDeleteConfirmation = true}>Delete</button>
               </td>
             </tr>
           {/each}
@@ -169,11 +169,11 @@
 <div class="popup">
   <div class="popup-content">
     <h1 style="color:blue;">Candidate Details</h1>
-    <p>First Name: <input type="text" bind:value={editedCandidate.firstName} placeholder="Enter first name" /></p>
-    <p>Surname: <input type="text" bind:value={editedCandidate.surname} placeholder="Enter surname" /></p>
-    <p>Email: <input type="text" bind:value={editedCandidate.email} placeholder="Enter email" /></p>
-    <p>Mobile: <input type="text" bind:value={editedCandidate.mobile} placeholder="Enter mobile" /></p>
-    <p>CV Upload: <input type="file" /></p>
+    <p>First Name: <input type="text" class="form-control" bind:value={editedCandidate.firstName} placeholder="Enter first name" /></p>
+    <p>Surname: <input type="text" class="form-control" bind:value={editedCandidate.surname} placeholder="Enter surname" /></p>
+    <p>Email: <input type="text" class="form-control" bind:value={editedCandidate.email} placeholder="Enter email" /></p>
+    <p>Mobile: <input type="text" class="form-control" bind:value={editedCandidate.mobile} placeholder="Enter mobile" /></p>
+    <p>CV Upload: <input type="file" class="form-control-file" /></p>
     <div>
       <button class="btn btn-primary" on:click={saveCandidate}>Save</button>
       <button class="btn btn-secondary" on:click={closePopup}>Close</button>
