@@ -39,6 +39,8 @@
   function handleTitleClick(candidate) {
     selectedCandidate = candidate;
     editedCandidate = { ...selectedCandidate };
+    showCVUploadPopup = true;
+    candidateId = candidate.id;
     dispatch("showPopup");
   }
 
@@ -184,7 +186,8 @@
 
   async function saveCV() {
     const formData = new FormData();
-    formData.append('cvFile', cvFile);
+    formData.append('cvFile', file);
+    formData.append('candidateId', candidateId);
 
     // Send the CV file data to the API
     const apiUrl = `https://api.recruitly.io/api/candidatecv/upload?apiKey=TEST1236C4CF23E6921C41429A6E1D546AC9535E`;
