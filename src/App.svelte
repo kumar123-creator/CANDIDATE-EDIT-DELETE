@@ -39,8 +39,6 @@
   function handleTitleClick(candidate) {
     selectedCandidate = candidate;
     editedCandidate = { ...selectedCandidate };
-    showCVUploadPopup = true;
-    candidateId = candidate.id;
     dispatch("showPopup");
   }
 
