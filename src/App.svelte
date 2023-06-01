@@ -261,6 +261,7 @@
         <th>Surname</th>
         <th>Email</th>
         <th>Mobile</th>
+        <th>Candidate ID</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -273,6 +274,7 @@
           <td>{candidate.surname}</td>
           <td>{candidate.email}</td>
           <td>{candidate.mobile}</td>
+          <td>{candidate.id}</td>
           <td>
             <button class="btn btn-primary btn-sm" on:click|preventDefault={() => showCVUploadPopup = true}>CV Upload</button>
             <button class="btn btn-danger btn-sm" on:click|preventDefault={() => showDeleteWarning(candidate)}>Delete</button>
